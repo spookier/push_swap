@@ -9,6 +9,7 @@ void	error_msg(void)
 t_stack	*init_process(int argc, char **argv)
 {
 	t_stack	*a;
+	t_stack *new_node;
 	int		number;
 	int		i;
 
@@ -26,7 +27,8 @@ t_stack	*init_process(int argc, char **argv)
 		while (i < argc)
 		{
 			number = ps_atoi(argv[i]);
-			add_node_to_stack(&a, create_new_node(number));
+			new_node = create_new_node(number);
+			add_node_to_stack(&a, new_node);
 			i++;
 		}
 	}
