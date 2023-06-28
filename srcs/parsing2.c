@@ -33,7 +33,6 @@ int	get_index(t_stack *a, int nbr)
 		i++;
 		a = a->next;
 	}
-	a->index = 0;
 	return (i);
 }
 

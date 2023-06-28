@@ -24,11 +24,10 @@ int	ps_atoi(const char *str)
 		i = i * 10 + (*str - 48);
 		str++;
 	}
-	if ((flag * i) > 2147483647 || (flag * i) < -2147483648)
+	if ((flag * i) > INT_MAX || (flag * i) < INT_MIN)
 		error_msg();
 	return (flag * i);
 }
-
 
 int	check_duplicate(t_stack *a)
 {

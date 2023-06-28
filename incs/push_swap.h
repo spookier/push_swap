@@ -2,49 +2,32 @@
 # define PUSH_SWAP_H
 
 # include <unistd.h>
-# include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include <stdbool.h>
 # include "../libft/libft.h"
 
 # define INT_MAX 2147483647
+# define INT_MIN -2147483648
 
 typedef struct s_stack
 {
 	long			value;
-	long			index;
 	struct s_stack	*next;
-	struct s_stack	*prev;
 }	t_stack;
 
 
-
-// void sa(t_stack **node, int print_flag);
-// void sb(t_stack **node, int print_flag);
-// void ss(t_stack **a, t_stack **b);
-// void pa(t_stack **a, t_stack **b);
-// void pb(t_stack **a, t_stack **b);
-// void ra(t_stack **a, int print_flag);
-// void rb(t_stack **b, int print_flag);
-// void rr(t_stack **a, t_stack **b);
-// void rra(t_stack **a, int print_flag);
-// void rrb(t_stack **b, int print_flag);
-// void rrr(t_stack **a, t_stack **b);
-
 // OPERATIONS
-
-void		ra(t_stack **a, int j);
-void		rb(t_stack **b, int j);
-void		sa(t_stack **a, int j);
-void		pa(t_stack **a, t_stack **b, int j);
-void		pb(t_stack **stack_a, t_stack **stack_b, int j);
-void		rra(t_stack **a, int j);
-void		ss(t_stack **a, t_stack **b, int j);
-void		rr(t_stack **a, t_stack **b, int j);
-void		rrr_sub(t_stack **b, int j);
-void		rrr(t_stack **a, t_stack **b, int j);
-void		rrb(t_stack **b, int j);
+void		ra(t_stack **a, int print_flag);
+void		rb(t_stack **b, int print_flag);
+void		sa(t_stack **a, int print_flag);
+void		pa(t_stack **a, t_stack **b, int print_flag);
+void		pb(t_stack **stack_a, t_stack **stack_b, int print_flag);
+void		rra(t_stack **a, int print_flag);
+void		ss(t_stack **a, t_stack **b, int print_flag);
+void		rr(t_stack **a, t_stack **b, int print_flag);
+void		rrr_sub(t_stack **b, int print_flag);
+void		rrr(t_stack **a, t_stack **b, int print_flag);
+void		rrb(t_stack **b, int print_flag);
 
 // PARSING + CHECKS
 int			check_duplicate(t_stack *a);
@@ -61,20 +44,20 @@ t_stack		*find_last_in_list(t_stack *lst);
 
 
 // MEMORY
-t_stack			*init_process(int argc, char **argv);
-t_stack			*create_new_node(int content);
-void			add_node_to_stack(t_stack **stack, t_stack *stack_new);
-
+t_stack			*init_prog(int argc, char **argv);
+// t_stack			*create_new_node(int number);
+// void			add_node_to_stack(t_stack **stack, t_stack *stack_new);
+int process_arg_and_add_to_stack(t_stack **a, char *argv);
+void 			free_stack(t_stack **stack);
 
 // ROTATIONS
 int			rotate_type_ba(t_stack *a, t_stack *b);
 int			rotate_type_ab(t_stack *a, t_stack *b);
 
-
 // ALGORITHM
-void		sort(t_stack **stack_a);
 t_stack		*sort_b(t_stack **stack_a);
 t_stack		**sort_a(t_stack **stack_a, t_stack **stack_b);
+void		sort(t_stack **stack_a);
 void		sort_b_till_3(t_stack **stack_a, t_stack **stack_b);
 void		sort_only_3(t_stack **stack_a);
 
