@@ -7,9 +7,8 @@ int	ps_atoi(const char *str)
 
 	i = 0;
 	flag = 1;
-	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f'
-		|| *str == '\v' || *str == '\r')
-		str++;
+	if (!*str)
+		error_msg();
 	if (*str == '-')
 	{
 		flag = -1;

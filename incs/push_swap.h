@@ -45,9 +45,7 @@ t_stack		*find_last_in_list(t_stack *lst);
 
 // MEMORY
 t_stack			*init_prog(int argc, char **argv);
-// t_stack			*create_new_node(int number);
-// void			add_node_to_stack(t_stack **stack, t_stack *stack_new);
-int process_arg_and_add_to_stack(t_stack **a, char *argv);
+int 			process_arg_and_add_to_stack(t_stack **a, char *argv);
 void 			free_stack(t_stack **stack);
 
 // ROTATIONS
@@ -58,6 +56,7 @@ int			rotate_type_ab(t_stack *a, t_stack *b);
 t_stack		*sort_b(t_stack **stack_a);
 t_stack		**sort_a(t_stack **stack_a, t_stack **stack_b);
 void		sort(t_stack **stack_a);
+int 		sort_two(t_stack **a, char **argv);
 void		sort_b_till_3(t_stack **stack_a, t_stack **stack_b);
 void		sort_only_3(t_stack **stack_a);
 
@@ -78,7 +77,6 @@ int			case_rarb(t_stack *a, t_stack *b, int c);
 int			case_rrarrb(t_stack *a, t_stack *b, int c);
 int			case_rrarb(t_stack *a, t_stack *b, int c);
 int			case_rarrb(t_stack *a, t_stack *b, int c);
-
 
 
 #endif

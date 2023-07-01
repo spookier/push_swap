@@ -30,7 +30,7 @@ int process_arg_and_add_to_stack(t_stack **a, char *argv)
 
     number = ps_atoi(argv);
     new_node = create_new_node(number);
-    if(!new_node || number == -1)
+    if(!new_node)
     {
         free_stack(a);
 		free(new_node);

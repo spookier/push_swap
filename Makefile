@@ -22,6 +22,7 @@ FILES =		$(SRCS_DIR)main.c \
 			$(SRCS_DIR)parsing.c \
 			$(SRCS_DIR)parsing2.c \
 			$(SRCS_DIR)algorithm.c \
+			$(SRCS_DIR)algorithm2.c \
 			$(SRCS_DIR)rotations_type.c \
 			$(SRCS_DIR)case_check_a.c \
 			$(SRCS_DIR)case_check_ab.c \

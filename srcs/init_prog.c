@@ -6,7 +6,6 @@ void	error_msg(void)
 	exit(1);
 }
 
-
 t_stack	*init_prog(int argc, char **argv)
 {
 	t_stack	*a;
@@ -16,8 +15,11 @@ t_stack	*init_prog(int argc, char **argv)
 	a = NULL;
 	if (argc < 2)
 		error_msg();
-	if (argc == 2)
-		printf("2 argc\n");
+	if (argc == 3)
+	{
+		if(sort_two(&a, argv) == -1)
+			return(NULL);
+	}
 	else
 	{
 		while (i < argc)
