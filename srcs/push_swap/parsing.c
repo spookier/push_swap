@@ -1,6 +1,12 @@
-#include "../incs/push_swap.h"
+#include "../../incs/push_swap.h"
 
-int	ps_atoi(const char *str)
+void	norminette_atoi(int *flag, const char **str)
+{
+	*flag = -1;
+	(*str)++;
+}
+
+int	ps_atoi(const char *str, t_stack **a)
 {
 	int				flag;
 	long int 		i;
@@ -8,23 +14,20 @@ int	ps_atoi(const char *str)
 	i = 0;
 	flag = 1;
 	if (!*str)
-		error_msg();
+		error_msg_atoi(a);
 	if (*str == '-')
-	{
-		flag = -1;
-		str++;
-	}
+		norminette_atoi(&flag, &str);
 	else if (*str == '+')
 		str++;
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			error_msg();
+			error_msg_atoi(a);
 		i = i * 10 + (*str - 48);
 		str++;
 	}
 	if ((flag * i) > INT_MAX || (flag * i) < INT_MIN)
-		error_msg();
+		error_msg_atoi(a);
 	return (flag * i);
 }
 
@@ -48,14 +51,14 @@ int	check_duplicate(t_stack *a)
 
 int	check_if_sorted(t_stack *stack_a)
 {
-	int	i;
+	int	number;
 
-	i = stack_a->value;
+	number = stack_a->value;
 	while (stack_a)
 	{
-		if (i > stack_a->value)
+		if (number > stack_a->value)
 			return (0);
-		i = stack_a->value;
+		number = stack_a->value;
 		stack_a = stack_a->next;
 	}
 	return (1);

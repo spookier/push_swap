@@ -17,22 +17,24 @@ typedef struct s_stack
 
 
 // OPERATIONS
-void		ra(t_stack **a, int print_flag);
-void		rb(t_stack **b, int print_flag);
 void		sa(t_stack **a, int print_flag);
+void		sb(t_stack **b, int print_flag);
+void		ss(t_stack **a, t_stack **b, int print_flag);
 void		pa(t_stack **a, t_stack **b, int print_flag);
 void		pb(t_stack **stack_a, t_stack **stack_b, int print_flag);
-void		rra(t_stack **a, int print_flag);
-void		ss(t_stack **a, t_stack **b, int print_flag);
+void		ra(t_stack **a, int print_flag);
+void		rb(t_stack **b, int print_flag);
 void		rr(t_stack **a, t_stack **b, int print_flag);
+void		rra(t_stack **a, int print_flag);
+void		rrb(t_stack **b, int print_flag);
 void		rrr_sub(t_stack **b, int print_flag);
 void		rrr(t_stack **a, t_stack **b, int print_flag);
-void		rrb(t_stack **b, int print_flag);
 
 // PARSING + CHECKS
 int			check_duplicate(t_stack *a);
 void		error_msg(void);
-int			ps_atoi(const char *str);
+void		error_msg_atoi(t_stack **a);
+int			ps_atoi(const char *str, t_stack **a);
 int			check_if_sorted(t_stack *stack_a);
 int			find_list_size(t_stack *lst);
 int			find_max(t_stack *a);
@@ -77,6 +79,5 @@ int			case_rarb(t_stack *a, t_stack *b, int c);
 int			case_rrarrb(t_stack *a, t_stack *b, int c);
 int			case_rrarb(t_stack *a, t_stack *b, int c);
 int			case_rarrb(t_stack *a, t_stack *b, int c);
-
 
 #endif

@@ -1,4 +1,4 @@
-#include "../incs/push_swap.h"
+#include "../../incs/push_swap.h"
 
 static void	add_node_to_stack(t_stack **stack, t_stack *stack_new)
 {
@@ -22,13 +22,12 @@ static t_stack	*create_new_node(int number)
 	return (new);
 }
 
-
 int process_arg_and_add_to_stack(t_stack **a, char *argv)
 {
 	t_stack *new_node;
 	int number;
 
-    number = ps_atoi(argv);
+    number = ps_atoi(argv, a);
     new_node = create_new_node(number);
     if(!new_node)
     {
@@ -47,7 +46,6 @@ void	free_stack(t_stack **stack)
 
     if (!stack || !*stack)
         return;
-
     current_node = *stack;
     while (current_node != NULL)
     {

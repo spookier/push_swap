@@ -1,10 +1,4 @@
-#include "../incs/push_swap.h"
-
-void	error_msg(void)
-{	
-	write (1, "Error\n", 6);
-	exit(1);
-}
+#include "../../incs/push_swap.h"
 
 t_stack	*init_prog(int argc, char **argv)
 {

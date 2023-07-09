@@ -1,4 +1,4 @@
-#include "../incs/push_swap.h"
+#include "../../incs/push_swap.h"
 
 int	case_rarb(t_stack *a, t_stack *b, int c)
 {

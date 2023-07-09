@@ -1,4 +1,4 @@
-#include "../incs/push_swap.h"
+#include "../../incs/push_swap.h"
 
 int	find_list_size(t_stack *lst)
 {
@@ -80,4 +80,17 @@ int	find_place_a(t_stack *stack_a, int nbr_push)
 		}
 	}
 	return (i);
+}
+
+void	error_msg(void)
+{	
+	write (1, "Error\n", 6);
+	exit(1);
+}
+
+void		error_msg_atoi(t_stack **a)
+{
+	write (1, "Error\n", 6);
+	free_stack(a);
+	exit(1);
 }

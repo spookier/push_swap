@@ -1,4 +1,4 @@
-#include "../incs/push_swap.h"
+#include "../../incs/push_swap.h"
 
 int	main(int argc, char **argv)
 {

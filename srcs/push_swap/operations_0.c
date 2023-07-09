@@ -1,7 +1,6 @@
+#include "../../incs/push_swap.h"
 
-#include "../incs/push_swap.h"
-
-void	ra(t_stack **a, int j)
+void	ra(t_stack **a, int print_flag)
 {
 	t_stack	*tmp;
 
@@ -12,11 +11,11 @@ void	ra(t_stack **a, int j)
 	(*a)->next = tmp;
 	*a = tmp->next;
 	tmp->next = NULL;
-	if (j == 0)
+	if (print_flag == 0)
 		write(1, "ra\n", 3);
 }
 
-void	sa(t_stack **a, int j)
+void	sa(t_stack **a, int print_flag)
 {
 	t_stack	*tmp;
 
@@ -26,11 +25,11 @@ void	sa(t_stack **a, int j)
 	*a = (*a)->next;
 	tmp->next = (*a)->next;
 	(*a)->next = tmp;
-	if (j == 0)
+	if (print_flag == 0)
 		write(1, "sa\n", 3);
 }
 
-void	pa(t_stack **a, t_stack **b, int j)
+void	pa(t_stack **a, t_stack **b, int print_flag)
 {
 	t_stack	*tmp;
 
@@ -40,12 +39,12 @@ void	pa(t_stack **a, t_stack **b, int j)
 	*a = *b;
 	*b = (*b)->next;
 	(*a)->next = tmp;
-	if (j == 0)
+	if (print_flag == 0)
 		write(1, "pa\n", 3);
 }
 
 
-void	rra(t_stack **a, int j)
+void	rra(t_stack **a, int print_flag)
 {
 	t_stack	*tmp;
 	int		i;
@@ -66,11 +65,11 @@ void	rra(t_stack **a, int j)
 		i--;
 	}
 	tmp->next = NULL;
-	if (j == 0)
+	if (print_flag == 0)
 		write(1, "rra\n", 4);
 }
 
-void	ss(t_stack **a, t_stack **b, int j)
+void	ss(t_stack **a, t_stack **b, int print_flag)
 {
 	t_stack	*tmp;
 
@@ -84,12 +83,12 @@ void	ss(t_stack **a, t_stack **b, int j)
 	*b = (*b)->next;
 	tmp->next = (*b)->next;
 	(*b)->next = tmp;
-	if (j == 0)
+	if (print_flag == 0)
 		write(1, "ss\n", 3);
 }
 
 
-void	rr(t_stack **a, t_stack **b, int j)
+void	rr(t_stack **a, t_stack **b, int print_flag)
 {
 	t_stack	*tmp;
 
@@ -105,11 +104,11 @@ void	rr(t_stack **a, t_stack **b, int j)
 	(*b)->next = tmp;
 	*b = tmp->next;
 	tmp->next = NULL;
-	if (j == 0)
+	if (print_flag == 0)
 		write(1, "rr\n", 3);
 }
 
-void	rrr_sub(t_stack **b, int j)
+void	rrr_sub(t_stack **b, int print_flag)
 {
 	t_stack	*tmp;
 	int		i;
@@ -128,12 +127,12 @@ void	rrr_sub(t_stack **b, int j)
 		i--;
 	}
 	tmp->next = NULL;
-	if (j == 0)
+	if (print_flag == 0)
 		write(1, "rrr\n", 4);
 }
 
 // rrr : rra and rrb at the same time.
-void	rrr(t_stack **a, t_stack **b, int j)
+void	rrr(t_stack **a, t_stack **b, int print_flag)
 {
 	t_stack	*tmp;
 	int		i;
@@ -154,11 +153,11 @@ void	rrr(t_stack **a, t_stack **b, int j)
 		i--;
 	}
 	tmp->next = NULL;
-	rrr_sub(b, j);
+	rrr_sub(b, print_flag);
 }
 
 
-void	pb(t_stack **stack_a, t_stack **stack_b, int j)
+void	pb(t_stack **stack_a, t_stack **stack_b, int print_flag)
 {
 	t_stack	*tmp;
 
@@ -168,11 +167,11 @@ void	pb(t_stack **stack_a, t_stack **stack_b, int j)
 	*stack_b = *stack_a;
 	*stack_a = (*stack_a)->next;
 	(*stack_b)->next = tmp;
-	if (j == 0)
+	if (print_flag == 0)
 		write(1, "pb\n", 3);
 }
 
-void	rrb(t_stack **b, int j)
+void	rrb(t_stack **b, int print_flag)
 {
 	t_stack	*tmp;
 	int		i;
@@ -193,11 +192,11 @@ void	rrb(t_stack **b, int j)
 		i--;
 	}
 	tmp->next = NULL;
-	if (j == 0)
+	if (print_flag == 0)
 		write(1, "rrb\n", 4);
 }
 
-void	rb(t_stack **b, int j)
+void	rb(t_stack **b, int print_flag)
 {
 	t_stack	*tmp;
 
@@ -208,12 +207,12 @@ void	rb(t_stack **b, int j)
 	(*b)->next = tmp;
 	*b = tmp->next;
 	tmp->next = NULL;
-	if (j == 0)
+	if (print_flag == 0)
 		write(1, "rb\n", 3);
 }
 
 
-void	sb(t_stack **b, int j)
+void	sb(t_stack **b, int print_flag)
 {
 	t_stack	*tmp;
 
@@ -223,6 +222,6 @@ void	sb(t_stack **b, int j)
 	*b = (*b)->next;
 	tmp->next = (*b)->next;
 	(*b)->next = tmp;
-	if (j == 0)
+	if (print_flag == 0)
 		write(1, "sb\n", 3);
 }
