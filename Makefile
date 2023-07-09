@@ -25,10 +25,14 @@ INCS_DIR = ./incs
 # Mandatory files
 FILES =		$(PUSH_SWAP_DIR)main.c \
 			$(PUSH_SWAP_DIR)operations_0.c \
+			$(PUSH_SWAP_DIR)operations_1.c \
+			$(PUSH_SWAP_DIR)operations_2.c \
 			$(PUSH_SWAP_DIR)init_prog.c \
 			$(PUSH_SWAP_DIR)memory_mng.c \
 			$(PUSH_SWAP_DIR)parsing.c \
 			$(PUSH_SWAP_DIR)parsing2.c \
+			$(PUSH_SWAP_DIR)parsing3.c \
+			$(PUSH_SWAP_DIR)norm_utils.c \
 			$(PUSH_SWAP_DIR)algorithm.c \
 			$(PUSH_SWAP_DIR)algorithm2.c \
 			$(PUSH_SWAP_DIR)rotations_type.c \
@@ -42,7 +46,11 @@ BONUS_FILES =	$(BONUS_DIR)main.c \
 				$(PUSH_SWAP_DIR)memory_mng.c \
 				$(PUSH_SWAP_DIR)parsing.c \
 				$(PUSH_SWAP_DIR)parsing2.c \
+				$(PUSH_SWAP_DIR)parsing3.c \
+				$(PUSH_SWAP_DIR)norm_utils.c \
 				$(PUSH_SWAP_DIR)operations_0.c \
+				$(PUSH_SWAP_DIR)operations_1.c \
+				$(PUSH_SWAP_DIR)operations_2.c \
 
 OBJ_FILES = $(FILES:.c=.o)
 BONUS_OBJ_FILES = $(BONUS_FILES:.c=.o)

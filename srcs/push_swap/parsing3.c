@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parsing3.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acostin <acostin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 01:07:32 by acostin           #+#    #+#             */
-/*   Updated: 2023/07/10 01:07:46 by acostin          ###   ########.fr       */
+/*   Created: 2023/07/10 01:27:25 by acostin           #+#    #+#             */
+/*   Updated: 2023/07/10 01:29:50 by acostin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incs/push_swap.h"
 
-int	main(int argc, char **argv)
+void	error_msg(void)
 {
-	t_stack	*a;
+	write (1, "Error\n", 6);
+	exit (1);
+}
 
-	a = init_prog(argc, argv);
-	if (!a || check_duplicate(a))
-	{
-		free_stack(&a);
-		error_msg();
-	}
-	if (!check_if_sorted(a))
-		sort(&a);
-	free_stack(&a);
-	return (0);
+void	error_msg_atoi(t_stack **a)
+{
+	write (1, "Error\n", 6);
+	free_stack(a);
+	exit (1);
 }

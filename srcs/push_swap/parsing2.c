@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing2.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acostin <acostin@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/10 01:26:12 by acostin           #+#    #+#             */
+/*   Updated: 2023/07/10 01:29:21 by acostin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../incs/push_swap.h"
 
 int	find_list_size(t_stack *lst)
@@ -22,7 +34,6 @@ t_stack	*find_last_in_list(t_stack *lst)
 	return (lst);
 }
 
-
 int	get_index(t_stack *a, int nbr)
 {
 	int		i;
@@ -36,13 +47,14 @@ int	get_index(t_stack *a, int nbr)
 	return (i);
 }
 
-int find_place_b(t_stack *stack_b, int nbr_push)
+int	find_place_b(t_stack *stack_b, int nbr_push)
 {
-	int		i;
-	t_stack	*tmp;
+	int			i;
+	t_stack		*tmp;
 
 	i = 1;
-	if (nbr_push > stack_b->value && nbr_push < find_last_in_list(stack_b)->value)
+	if (nbr_push > stack_b->value && 
+		nbr_push < find_last_in_list(stack_b)->value)
 		i = 0;
 	else if (nbr_push > find_max(stack_b) || nbr_push < find_min(stack_b))
 		i = get_index(stack_b, find_max(stack_b));
@@ -65,7 +77,8 @@ int	find_place_a(t_stack *stack_a, int nbr_push)
 	t_stack	*tmp;
 
 	i = 1;
-	if (nbr_push < stack_a->value && nbr_push > find_last_in_list(stack_a)->value)
+	if (nbr_push < stack_a->value && 
+		nbr_push > find_last_in_list(stack_a)->value)
 		i = 0;
 	else if (nbr_push > find_max(stack_a) || nbr_push < find_min(stack_a))
 		i = get_index(stack_a, find_min(stack_a));
@@ -80,17 +93,4 @@ int	find_place_a(t_stack *stack_a, int nbr_push)
 		}
 	}
 	return (i);
-}
-
-void	error_msg(void)
-{	
-	write (1, "Error\n", 6);
-	exit(1);
-}
-
-void		error_msg_atoi(t_stack **a)
-{
-	write (1, "Error\n", 6);
-	free_stack(a);
-	exit(1);
 }

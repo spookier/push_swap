@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algorithm.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acostin <acostin@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/10 00:59:31 by acostin           #+#    #+#             */
+/*   Updated: 2023/07/10 01:05:05 by acostin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../incs/push_swap.h"
 
 void	sort(t_stack **stack_a)
@@ -22,8 +34,8 @@ void	sort(t_stack **stack_a)
 		{
 			while ((*stack_a)->value != find_min(*stack_a))
 				rra(stack_a, 0);
-		}			
-	}	
+		}
+	}
 }
 
 t_stack	**sort_a(t_stack **stack_a, t_stack **stack_b)
@@ -52,7 +64,6 @@ t_stack	**sort_a(t_stack **stack_a, t_stack **stack_b)
 	return (stack_a);
 }
 
-
 t_stack	*sort_b(t_stack **stack_a)
 {
 	t_stack	*stack_b;
@@ -68,7 +79,6 @@ t_stack	*sort_b(t_stack **stack_a)
 		sort_only_3(stack_a);
 	return (stack_b);
 }
-
 
 void	sort_b_till_3(t_stack **stack_a, t_stack **stack_b)
 {

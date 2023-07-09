@@ -1,22 +1,28 @@
-#include "../../incs/push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acostin <acostin@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/10 01:22:38 by acostin           #+#    #+#             */
+/*   Updated: 2023/07/10 01:25:56 by acostin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	norminette_atoi(int *flag, const char **str)
-{
-	*flag = -1;
-	(*str)++;
-}
+#include "../../incs/push_swap.h"
 
 int	ps_atoi(const char *str, t_stack **a)
 {
-	int				flag;
-	long int 		i;
+	int			flag;
+	long int	i;
 
 	i = 0;
 	flag = 1;
 	if (!*str)
 		error_msg_atoi(a);
 	if (*str == '-')
-		norminette_atoi(&flag, &str);
+		norm_atoi(&flag, &str);
 	else if (*str == '+')
 		str++;
 	while (*str)

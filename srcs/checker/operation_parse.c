@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operation_parse.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acostin <acostin@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/10 00:55:31 by acostin           #+#    #+#             */
+/*   Updated: 2023/07/10 00:58:03 by acostin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../incs/checker.h"
 
-void exec_operation2(t_stack **stack_a, t_stack **stack_b, char *operation)
+void	exec_operation2(t_stack **stack_a, t_stack **stack_b, char *operation)
 {
 	if (ft_strcmp(operation, "rra") == 0)
 		rra(stack_a, 1);
@@ -12,7 +24,7 @@ void exec_operation2(t_stack **stack_a, t_stack **stack_b, char *operation)
 		error_free_and_exit(stack_a, operation);
 }
 
-void exec_operation(t_stack **stack_a, t_stack **stack_b, char *operation)
+void	exec_operation(t_stack **stack_a, t_stack **stack_b, char *operation)
 {
 	if (ft_strcmp(operation, "sa") == 0)
 		sa(stack_a, 1);
@@ -34,25 +46,24 @@ void exec_operation(t_stack **stack_a, t_stack **stack_b, char *operation)
 		exec_operation2(stack_a, stack_b, operation);
 }
 
-int check_operation(t_stack **stack_a, t_stack **stack_b, char *operation)
+int	check_operation(t_stack **stack_a, t_stack **stack_b, char *operation)
 {
-	//printf("will run the following operation --> %s\n", operation);
 	if (ft_strcmp(operation, "Error") == 0)
 		error_free_and_exit(stack_a, operation);
 	else
 		exec_operation(stack_a, stack_b, operation);
-	return(0);
+	return (0);
 }
 
-char *alloc_operation(void)
+char	*alloc_operation(void)
 {
-	char *operation;
-	int i;
-	char c;
+	char	*operation;
+	int		i;
+	char	c;
 
 	operation = malloc(sizeof(char) * 8);
-	if(!operation)
-		return(NULL);
+	if (!operation)
+		return (NULL);
 	i = 0;
 	while (i < 7 && read(0, &c, 1) > 0 && c != '\n')
 	{
@@ -60,13 +71,13 @@ char *alloc_operation(void)
 		i++;
 	}
 	operation[i] = '\0';
-	return(operation);
+	return (operation);
 }
 
-int start_operations(t_stack **stack_a)
+int	start_operations(t_stack **stack_a)
 {
-	char *operation;
-	t_stack *stack_b;
+	char	*operation;
+	t_stack	*stack_b;
 
 	stack_b = NULL;
 	while (1)
@@ -77,13 +88,12 @@ int start_operations(t_stack **stack_a)
 		if (operation[0] == '\0')
 		{
 			free(operation);
-			break;
+			break ;
 		}
-		//printf("\nsending operation = %s\n", operation);
 		check_operation(stack_a, &stack_b, operation);
 		free(operation);
 	}
-	if(stack_b)
-		return(-1);
-	return(0);
+	if (stack_b)
+		return (-1);
+	return (0);
 }

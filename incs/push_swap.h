@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acostin <acostin@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/10 00:59:59 by acostin           #+#    #+#             */
+/*   Updated: 2023/07/10 01:24:17 by acostin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -14,7 +26,6 @@ typedef struct s_stack
 	long			value;
 	struct s_stack	*next;
 }	t_stack;
-
 
 // OPERATIONS
 void		sa(t_stack **a, int print_flag);
@@ -34,21 +45,21 @@ void		rrr(t_stack **a, t_stack **b, int print_flag);
 int			check_duplicate(t_stack *a);
 void		error_msg(void);
 void		error_msg_atoi(t_stack **a);
+void		norm_atoi(int *flag, const char **str);
 int			ps_atoi(const char *str, t_stack **a);
 int			check_if_sorted(t_stack *stack_a);
 int			find_list_size(t_stack *lst);
 int			find_max(t_stack *a);
 int			find_min(t_stack *a);
 int			get_index(t_stack *a, int nbr);
-int 		find_place_a(t_stack *stack_b, int nbr_push);
-int 		find_place_b(t_stack *stack_b, int nbr_push);
+int			find_place_a(t_stack *stack_b, int nbr_push);
+int			find_place_b(t_stack *stack_b, int nbr_push);
 t_stack		*find_last_in_list(t_stack *lst);
 
-
-// MEMORY
-t_stack			*init_prog(int argc, char **argv);
-int 			process_arg_and_add_to_stack(t_stack **a, char *argv);
-void 			free_stack(t_stack **stack);
+// MEMORY MANAGE
+t_stack		*init_prog(int argc, char **argv);
+int			process_arg_and_add_to_stack(t_stack **a, char *argv);
+void		free_stack(t_stack **stack);
 
 // ROTATIONS
 int			rotate_type_ba(t_stack *a, t_stack *b);
@@ -58,7 +69,7 @@ int			rotate_type_ab(t_stack *a, t_stack *b);
 t_stack		*sort_b(t_stack **stack_a);
 t_stack		**sort_a(t_stack **stack_a, t_stack **stack_b);
 void		sort(t_stack **stack_a);
-int 		sort_two(t_stack **a, char **argv);
+int			sort_two(t_stack **a, char **argv);
 void		sort_b_till_3(t_stack **stack_a, t_stack **stack_b);
 void		sort_only_3(t_stack **stack_a);
 
