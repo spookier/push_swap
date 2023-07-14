@@ -6,7 +6,7 @@
 /*   By: acostin <acostin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 01:06:58 by acostin           #+#    #+#             */
-/*   Updated: 2023/07/10 01:07:22 by acostin          ###   ########.fr       */
+/*   Updated: 2023/07/14 20:56:04 by acostin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,6 @@ t_stack	*init_prog(int argc, char **argv)
 	a = NULL;
 	if (argc < 2)
 		error_msg();
-	if (argc == 3)
-	{
-		if (sort_two(&a, argv) == -1)
-			return (NULL);
-	}
 	else
 	{
 		while (i < argc)

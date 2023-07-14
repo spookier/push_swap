@@ -6,7 +6,7 @@
 /*   By: acostin <acostin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 23:14:46 by acostin           #+#    #+#             */
-/*   Updated: 2022/12/10 15:43:05 by acostin          ###   ########.fr       */
+/*   Updated: 2023/07/14 20:57:02 by acostin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	{
 		final_str[i] = s1[i];
 		i++;
-	}	
+	}
 	j = 0;
 	while (s2[j])
 	{

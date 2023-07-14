@@ -6,7 +6,7 @@
 /*   By: acostin <acostin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:13:24 by acostin           #+#    #+#             */
-/*   Updated: 2023/03/15 22:36:10 by acostin          ###   ########.fr       */
+/*   Updated: 2023/07/14 20:56:45 by acostin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void		ft_lstiter(t_list *lst, void (*f)(void *));
 t_list		*ft_lstnew(void *content);
 t_list		*ft_lstlast(t_list *lst);
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-char	*ft_strcpy(char *dest, char *src);
-int		ft_strcmp(char *s1, char *s2);
+char		*ft_strcpy(char *dest, char *src);
+int			ft_strcmp(char *s1, char *s2);
 
 #endif

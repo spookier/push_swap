@@ -2,7 +2,7 @@
 NAME = push_swap
 BONUS_NAME = checker
 CC = cc
-CFLAGS = -Wall -Werror -Wextra 
+CFLAGS = -Wall -Werror -Wextra
 
 # COLOR CODES FOR DEBUG
 COLOUR_GREEN=\033[0;32m
