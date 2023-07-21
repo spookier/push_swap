@@ -53,8 +53,8 @@ int	find_place_b(t_stack *stack_b, int nbr_push)
 	t_stack		*tmp;
 
 	i = 1;
-	if (nbr_push > stack_b->value && 
-		nbr_push < find_last_in_list(stack_b)->value)
+	if (nbr_push > stack_b->value
+		&& nbr_push < find_last_in_list(stack_b)->value)
 		i = 0;
 	else if (nbr_push > find_max(stack_b) || nbr_push < find_min(stack_b))
 		i = get_index(stack_b, find_max(stack_b));
@@ -77,8 +77,8 @@ int	find_place_a(t_stack *stack_a, int nbr_push)
 	t_stack	*tmp;
 
 	i = 1;
-	if (nbr_push < stack_a->value && 
-		nbr_push > find_last_in_list(stack_a)->value)
+	if (nbr_push < stack_a->value
+		&& nbr_push > find_last_in_list(stack_a)->value)
 		i = 0;
 	else if (nbr_push > find_max(stack_a) || nbr_push < find_min(stack_a))
 		i = get_index(stack_a, find_min(stack_a));

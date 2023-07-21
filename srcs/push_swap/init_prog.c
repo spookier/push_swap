@@ -20,7 +20,7 @@ t_stack	*init_prog(int argc, char **argv)
 	i = 1;
 	a = NULL;
 	if (argc < 2)
-		error_msg();
+		exit(0);
 	else
 	{
 		while (i < argc)
