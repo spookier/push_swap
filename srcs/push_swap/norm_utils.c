@@ -15,8 +15,8 @@
 void	norm_atoi(const char **str, int *sign, t_stack **a)
 {
 	if (**str == '-')
-			*sign *= -1;
-		(*str)++;
-		if (**str == '\0')
-			error_msg_atoi(a);
+		*sign *= -1;
+	(*str)++;
+	if (**str == '\0')
+		error_msg_atoi(a);
 }

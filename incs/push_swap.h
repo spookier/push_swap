@@ -47,7 +47,7 @@ void		error_msg(void);
 void		error_msg_atoi(t_stack **a);
 void		norm_atoi(const char **str, int *sign, t_stack **a);
 int			ps_atoi(const char *str, t_stack **a);
-void 		validate_remaining_characters(const char *str, t_stack **a);
+void		validate_remaining_characters(const char *str, t_stack **a);
 int			check_if_sorted(t_stack *stack_a);
 int			find_list_size(t_stack *lst);
 int			find_max(t_stack *a);

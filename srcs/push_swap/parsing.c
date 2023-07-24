@@ -12,31 +12,6 @@
 
 #include "../../incs/push_swap.h"
 
-// int	ps_atoi(const char *str, t_stack **a)
-// {
-// 	int			flag;
-// 	long int	i;
-
-// 	i = 0;
-// 	flag = 1;
-// 	if (!*str)
-// 		error_msg_atoi(a);
-// 	if (*str == '-')
-// 		norm_atoi(&flag, &str);
-// 	else if (*str == '+')
-// 		str++;
-// 	while (*str)
-// 	{
-// 		if (!ft_isdigit(*str))
-// 			error_msg_atoi(a);
-// 		i = i * 10 + (*str - 48);
-// 		str++;
-// 	}
-// 	if ((flag * i) > INT_MAX || (flag * i) < INT_MIN)
-// 		error_msg_atoi(a);
-// 	return (flag * i);
-// }
-
 int	ps_atoi(const char *str, t_stack **a)
 {
 	int			sign;
@@ -60,7 +35,6 @@ int	ps_atoi(const char *str, t_stack **a)
 		error_msg_atoi(a);
 	return (nbr);
 }
-
 
 int	check_duplicate(t_stack *a)
 {
