@@ -22,8 +22,6 @@ int	case_rarb_a(t_stack *a, t_stack *b, int c)
 	return (i);
 }
 
-// This function calculates the required amount of rotation.
-// Calculations are done for rra+rrb case.
 int	case_rrarrb_a(t_stack *a, t_stack *b, int c)
 {
 	int	i;
@@ -36,8 +34,6 @@ int	case_rrarrb_a(t_stack *a, t_stack *b, int c)
 	return (i);
 }
 
-// This function calculates the required amount of rotation.
-// Calculations are done for ra+rrb case.
 int	case_rarrb_a(t_stack *a, t_stack *b, int c)
 {
 	int	i;
@@ -49,8 +45,6 @@ int	case_rarrb_a(t_stack *a, t_stack *b, int c)
 	return (i);
 }
 
-// This function calculates the required amount of rotation.
-// Calculations are done for rra+rb case.
 int	case_rrarb_a(t_stack *a, t_stack *b, int c)
 {
 	int	i;

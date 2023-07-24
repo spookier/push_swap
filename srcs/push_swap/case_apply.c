@@ -37,8 +37,6 @@ int	apply_rarb(t_stack **a, t_stack **b, int c, char s)
 	return (-1);
 }
 
-// This function rotate both stack_a and stack_b in the
-// reverse direction as required amount.
 int	apply_rrarrb(t_stack **a, t_stack **b, int c, char s)
 {
 	if (s == 'a')
@@ -64,8 +62,6 @@ int	apply_rrarrb(t_stack **a, t_stack **b, int c, char s)
 	return (-1);
 }
 
-// This function rotate the stack_a in reverse direction,
-// the stack_b in oppsite direction of stack_a as required amount.
 int	apply_rrarb(t_stack **a, t_stack **b, int c, char s)
 {
 	if (s == 'a')
@@ -87,8 +83,6 @@ int	apply_rrarb(t_stack **a, t_stack **b, int c, char s)
 	return (-1);
 }
 
-// This function rotate the stack_b in reverse direction,
-// the stack_a in oppsite direction of stack_a as required amount.
 int	apply_rarrb(t_stack **a, t_stack **b, int c, char s)
 {
 	if (s == 'a')

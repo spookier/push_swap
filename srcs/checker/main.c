@@ -14,7 +14,7 @@
 
 int	error_free_and_exit(t_stack **stack_a, char *operation)
 {
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	if (stack_a)
 		free_stack(stack_a);
 	if (operation)
@@ -26,7 +26,7 @@ void	check_program(t_stack **stack_a)
 {
 	if (check_duplicate(*stack_a) == 1)
 	{
-		write(1, "Error\n", 6);
+		write(2, "Error\n", 6);
 		if (stack_a)
 			free_stack(stack_a);
 		exit (-1);

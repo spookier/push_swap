@@ -12,8 +12,11 @@
 
 #include "../../incs/push_swap.h"
 
-void	norm_atoi(int *flag, const char **str)
+void	norm_atoi(const char **str, int *sign, t_stack **a)
 {
-	*flag = -1;
-	(*str)++;
+	if (**str == '-')
+			*sign *= -1;
+		(*str)++;
+		if (**str == '\0')
+			error_msg_atoi(a);
 }

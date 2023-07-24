@@ -12,6 +12,7 @@
 
 #include "../../incs/push_swap.h"
 
+
 t_stack	*init_prog(int argc, char **argv)
 {
 	t_stack	*a;

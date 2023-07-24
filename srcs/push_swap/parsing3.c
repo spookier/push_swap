@@ -14,13 +14,13 @@
 
 void	error_msg(void)
 {
-	write (1, "Error\n", 6);
+	write (2, "Error\n", 6);
 	exit (1);
 }
 
 void	error_msg_atoi(t_stack **a)
 {
-	write (1, "Error\n", 6);
+	write (2, "Error\n", 6);
 	free_stack(a);
 	exit (1);
 }
